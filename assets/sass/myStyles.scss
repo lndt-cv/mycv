@@ -1,0 +1,32 @@
+ngb-carousel .wrapper {
+  position: relative;
+  height: 0;
+  padding-top: 55%; /* Keep ratio for 900x500 images */
+}
+
+ngb-carousel .wrapper > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin mix-icon($style, $icon) {
+  //@include fa-icon;
+  @extend .#{$style};//fas or far or...
+  @extend .fa-xs;
+  @extend .fa-#{$icon};//fa-check or fa-hand-point-right or fa-thumbs-up
+}
+
+.small-check-icon {
+  @include mix-icon(fas, check);
+}
+
+.small-hand-point-right-icon {
+  @include mix-icon(far, hand-point-right);
+}
+
+.small-thumbs-up-icon {
+  @include mix-icon(far, thumbs-up);
+}
